@@ -1,12 +1,13 @@
 $(document).ready(function() {
-  $.get("https://lgapi-us.libapps.com/widgets.php?site_id=942&widget_type=8&output_format=1&widget_embed_type=2&guide_id=66305&box_id=2748549&map_id=3236810&content_only=0&include_jquery=0&config_id=1649688369020", function(data) {
+  $.get("https://lgapi-us.libapps.com/widgets.php?site_id=942&widget_type=8&output_format=1&widget_embed_type=2&guide_id=66305&box_id=29048009&map_id=34161060&content_only=0&include_jquery=0&config_id=1649688369020", function(data) {
     var wrapper = $('<div></div>').html(data);
-    if ($(wrapper).find('#s-lib-cpane-3236810 > div').length) {
-      var divs = $(wrapper).find('#s-lib-cpane-3236810 > div');
+    if ($(wrapper).find('#s-lib-cpane-34161060 > div').length) {
+      var divs = $(wrapper).find('#s-lib-cpane-34161060 > div');
       var slides = [];
       $(divs).each(function(index) {
         var url = $(this).children('a').attr("href");
-        var cover = $(this).children('a').children('img').attr("src");
+        url = url ? url : "#";
+        var cover = $(this).find('img').attr("src");
         var title = $(this).children('.s-lib-cpane-caption').text();
         if (cover != "") {
           var slide = `
